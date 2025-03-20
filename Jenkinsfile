@@ -4,28 +4,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
-                // Add your build steps here
+                sh './gradlew assemble'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing...'
-                // Add your test steps here
+                sh './gradlew test'
             }
         }
     }
 
     post {
-        always {
-            echo 'This will always run'
-        }
         success {
-            echo 'This will run only if successful'
+            echo 'Continuous Integration: SUCCESSFUL!'
         }
         failure {
-            echo 'This will run only if failed'
+            echo 'Continuous Integration: FAILED!'
         }
     }
 }
