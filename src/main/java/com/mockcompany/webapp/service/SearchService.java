@@ -65,7 +65,7 @@ public class SearchService {
 
             // If either one matches, add to our list
             if (nameMatches || descMatches) {
-                itemList.add(item);
+                // itemList.add(item);
             }
         }
         // Return results
